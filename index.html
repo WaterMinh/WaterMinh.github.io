@@ -3,23 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WaterMinh</title>
+  <title>Minh Ly - Personal Website</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
+      background-color: #f8fafc;
+      color: #0f172a;
+      margin: 0;
+      padding: 40px;
       line-height: 1.6;
     }
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
     h1 {
-      color: #1a73e8;
+      color: #2563eb;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin-top: 20px;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to WaterMinh's Website</h1>
-  <p>Hello, my name is Minh Ly.</p>
-  <p>This is my personal website hosted with GitHub Pages.</p>
-  <p>Course: 11402_CS351</p>
-  <p>Student: To Minh Ly</p>
+  <div class="container">
+    <h1>Minh Ly</h1>
+    <p>Hello! My name is Minh Ly. I am a Computer Science student currently studying CS351.</p>
+
+    <div class="card">
+      <h2>About Me</h2>
+      <p>I am interested in algorithms, software engineering, and system design. This website is my personal GitHub Pages site for course grading.</p>
+    </div>
+
+    <div class="card">
+      <h2>Course Projects</h2>
+      <p>
+        <a href="https://github.com/WaterMinh/11402_CS351">Course Repository</a><br>
+        <a href="https://github.com/WaterMinh/11402_CS351_Project0">Project 0</a><br>
+        <a href="https://github.com/WaterMinh/11402_CS351_ProjectB">Project B</a>
+      </p>
+    </div>
+  </div>
 </body>
 </html>
