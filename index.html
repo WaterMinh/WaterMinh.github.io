@@ -1,100 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minh Ly - Personal Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minh Ly | Computer Science Portfolio</title>
 
   <!-- Bootstrap 5 -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
-  >
+  />
 
   <style>
     body {
-      background-color: #f8fafc;
+      background: #f8fafc;
+      color: #0f172a;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.14), transparent 35%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
     }
 
     .hero-title {
-      color: #2563eb;
-      font-weight: 700;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #0f172a;
     }
 
-    .section-card {
-      border: none;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    .hero-highlight {
+      color: #2563eb;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #475569;
+      max-width: 760px;
     }
 
     .section-title {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .section-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      background: #ffffff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .section-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3730a3;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 4px;
+    }
+
+    .project-title {
       font-weight: 700;
       color: #0f172a;
     }
 
     .project-link {
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
+      color: #2563eb;
     }
 
     .project-link:hover {
       text-decoration: underline;
     }
+
+    .timeline-item {
+      border-left: 3px solid #2563eb;
+      padding-left: 16px;
+      margin-bottom: 18px;
+    }
+
+    .summary-point {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      height: 100%;
+    }
+
+    .footer {
+      border-top: 1px solid #e5e7eb;
+      color: #64748b;
+    }
   </style>
 </head>
+
 <body>
-  <div class="container py-5">
-    <div class="mb-4">
-      <h1 class="display-4 hero-title">Minh Ly</h1>
-      <p class="fs-4 text-dark">
-        Hello! My name is Minh Ly. I am a Computer Science student currently taking CS351.
-      </p>
-    </div>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">Minh Ly</a>
 
-    <div class="card section-card mb-4">
-      <div class="card-body p-4">
-        <h2 class="section-title mb-3">About Me</h2>
-        <p class="fs-5 mb-0 text-dark">
-          I am interested in algorithms, software engineering, and system design.
-          This website is my personal GitHub Pages site for course grading.
-        </p>
-      </div>
-    </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="card section-card mb-4">
-      <div class="card-body p-4">
-        <h2 class="section-title mb-3">Course Projects</h2>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item px-0">
-            <a class="project-link" href="https://github.com/WaterMinh/11402_CS351" target="_blank">
-              Course Repository
-            </a>
-          </li>
-          <li class="list-group-item px-0">
-            <a class="project-link" href="https://github.com/WaterMinh/11402_CS351_Project0" target="_blank">
-              Project 0
-            </a>
-          </li>
-          <li class="list-group-item px-0">
-            <a class="project-link" href="https://github.com/WaterMinh/11402_CS351_ProjectB" target="_blank">
-              Project B
-            </a>
-          </li>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-2">
+          <li class="nav-item"><a class="nav-link" href="#summary">Summary</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#coursework">Coursework</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
+  </nav>
 
-    <div class="card section-card">
-      <div class="card-body p-4">
-        <h2 class="section-title mb-3">GitHub</h2>
-        <p class="fs-5 mb-0">
-          <a class="project-link" href="https://github.com/WaterMinh" target="_blank">
-            Visit my GitHub profile
-          </a>
-        </p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container py-5">
+      <span class="hero-badge">Computer Science Student | CS351 Portfolio</span>
+
+      <h1 class="hero-title">
+        Hi, I am <span class="hero-highlight">Minh Ly</span>.
+      </h1>
+
+      <p class="hero-subtitle mt-4">
+        I am a Computer Science student interested in software engineering,
+        algorithms, system design, and AI-assisted development. This website
+        presents my course projects, GitHub work, and development progress.
+      </p>
+
+      <div class="mt-4 d-flex flex-wrap gap-3">
+        <a class="btn btn-primary btn-lg" href="https://github.com/WaterMinh" target="_blank">
+          View GitHub
+        </a>
+
+        <a class="btn btn-outline-primary btn-lg" href="https://www.linkedin.com/in/to-minh-ly-372a23399/" target="_blank">
+          LinkedIn
+        </a>
+
+        <a class="btn btn-outline-primary btn-lg" href="#projects">
+          View Projects
+        </a>
       </div>
     </div>
-  </div>
+  </section>
+
+  <main class="container py-5">
+    <!-- Professional Summary -->
+    <section id="summary" class="mb-5">
+      <div class="card section-card">
+        <div class="card-body p-4 p-md-5">
+          <h2 class="section-title">Professional Summary</h2>
+
+          <p class="fs-5 text-secondary">
+            Computer Science student with hands-on experience in software engineering
+            coursework, GitHub-based development workflow, and AI-assisted software
+            documentation. I am building a strong foundation in algorithms, system
+            design, project documentation, and collaborative development practices.
+          </p>
+
+          <p class="fs-5 text-secondary">
+            Through CS351 projects, I have practiced Scrum planning, Jira backlog
+            management, sprint tracking, Git branching, pull requests, Markdown
+            documentation, and SDD/BDD/TDD-based requirement analysis. I am especially
+            interested in writing clear technical documentation, organizing software
+            projects professionally, and using AI tools to improve development
+            productivity while still verifying results carefully.
+          </p>
+
+          <div class="row g-3 mt-3">
+            <div class="col-md-4">
+              <div class="summary-point">
+                <h5 class="fw-bold">Development Workflow</h5>
+                <p class="text-secondary mb-0">
+                  Git, GitHub, branches, commits, pull requests, merge workflow, and VS Code.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="summary-point">
+                <h5 class="fw-bold">Project Management</h5>
+                <p class="text-secondary mb-0">
+                  Scrum, Jira, product backlog, sprint backlog, sprint planning, and task tracking.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="summary-point">
+                <h5 class="fw-bold">Documentation</h5>
+                <p class="text-secondary mb-0">
+                  Markdown reports, PDF export, SDD, BDD, TDD, and technical writing.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="mb-5">
+      <div class="card section-card">
+        <div class="card-body p-4 p-md-5">
+          <h2 class="section-title">About Me</h2>
+
+          <p class="fs-5 text-secondary mb-0">
+            I am currently studying Computer Science and building practical
+            projects through CS351. I enjoy learning how to organize software
+            projects professionally, including requirements, documentation,
+            GitHub workflow, Scrum, Jira, branches, pull requests, and testing.
+            My goal is to become a developer who can write clean code, document
+            ideas clearly, and work effectively in a team.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="mb-5">
+      <h2 class="section-title">Skills and Tools</h2>
+
+      <div class="card section-card">
+        <div class="card-body p-4">
+          <div class="mb-3">
+            <span class="tag">C++</span>
+            <span class="tag">Python</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">Markdown</span>
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">Jira</span>
+            <span class="tag">Scrum</span>
+            <span class="tag">SDD</span>
+            <span class="tag">BDD</span>
+            <span class="tag">TDD</span>
+          </div>
+
+          <p class="text-secondary mb-0">
+            I am improving my ability to connect software development with
+            project management practices such as backlog planning, sprint
+            tracking, branch management, pull requests, and documentation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="mb-5">
+      <h2 class="section-title">Featured Projects</h2>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card section-card h-100">
+            <div class="card-body p-4">
+              <h3 class="project-title">Project B: Student Grade Calculator</h3>
+
+              <p class="text-secondary">
+                A course project focused on Scrum workflow, SDD, BDD, TDD,
+                Markdown reports, PDF export, GitHub branches, pull requests,
+                and Jira sprint tracking.
+              </p>
+
+              <a
+                class="project-link"
+                href="https://github.com/WaterMinh/11402_CS351_ProjectB"
+                target="_blank"
+              >
+                View Repository
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card section-card h-100">
+            <div class="card-body p-4">
+              <h3 class="project-title">Project 0</h3>
+
+              <p class="text-secondary">
+                Initial course project for practicing GitHub repository setup,
+                documentation, project structure, and basic development workflow.
+              </p>
+
+              <a
+                class="project-link"
+                href="https://github.com/WaterMinh/11402_CS351_Project0"
+                target="_blank"
+              >
+                View Repository
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card section-card h-100">
+            <div class="card-body p-4">
+              <h3 class="project-title">CS351 Course Repository</h3>
+
+              <p class="text-secondary">
+                Main repository for CS351 coursework, assignments, and learning
+                records related to software engineering and AI-assisted development.
+              </p>
+
+              <a
+                class="project-link"
+                href="https://github.com/WaterMinh/11402_CS351"
+                target="_blank"
+              >
+                View Repository
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card section-card h-100">
+            <div class="card-body p-4">
+              <h3 class="project-title">Personal GitHub Pages Website</h3>
+
+              <p class="text-secondary">
+                A personal portfolio website designed to present my background,
+                skills, projects, and course development progress professionally.
+              </p>
+
+              <a
+                class="project-link"
+                href="https://github.com/WaterMinh/WaterMinh.github.io"
+                target="_blank"
+              >
+                View Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coursework -->
+    <section id="coursework" class="mb-5">
+      <h2 class="section-title">Coursework Progress</h2>
+
+      <div class="card section-card">
+        <div class="card-body p-4">
+          <div class="timeline-item">
+            <h5 class="fw-bold mb-1">Scrum and Jira Practice</h5>
+
+            <p class="text-secondary mb-0">
+              Created user stories, subtasks, product backlog, sprint backlog,
+              and used the Jira board to track To Do, In Progress, In Review,
+              and Done states.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h5 class="fw-bold mb-1">GitHub Branch and Pull Request Workflow</h5>
+
+            <p class="text-secondary mb-0">
+              Practiced creating branches from Jira issues, editing files in
+              VS Code, committing changes, pushing branches, creating pull
+              requests, merging into main, and deleting feature branches.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h5 class="fw-bold mb-1">SDD, BDD, and TDD Report</h5>
+
+            <p class="text-secondary mb-0">
+              Wrote a Markdown report and exported it as a PDF for the Student
+              Grade Calculator assignment, including specification, behavior
+              scenarios, and test cases.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h5 class="fw-bold mb-1">Personal GitHub Pages Portfolio</h5>
+
+            <p class="text-secondary mb-0">
+              Designed and improved a personal website to present my skills,
+              projects, course work, GitHub profile, and LinkedIn profile in a
+              professional way.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mb-5">
+      <h2 class="section-title">Contact</h2>
+
+      <div class="card section-card">
+        <div class="card-body p-4">
+          <p class="fs-5 mb-2">
+            GitHub:
+            <a class="project-link" href="https://github.com/WaterMinh" target="_blank">
+              github.com/WaterMinh
+            </a>
+          </p>
+
+          <p class="fs-5 mb-2">
+            LinkedIn:
+            <a class="project-link" href="https://www.linkedin.com/in/to-minh-ly-372a23399/" target="_blank">
+              linkedin.com/in/to-minh-ly-372a23399
+            </a>
+          </p>
+
+          <p class="fs-5 mb-0">
+            Portfolio:
+            <a class="project-link" href="https://WaterMinh.github.io" target="_blank">
+              WaterMinh.github.io
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer py-4">
+    <div class="container text-center">
+      <p class="mb-0">
+        © 2026 Minh Ly. Built with HTML, Bootstrap, GitHub Pages, and CS351 practice.
+      </p>
+    </div>
+  </footer>
 
   <!-- Bootstrap JS -->
   <script
