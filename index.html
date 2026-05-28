@@ -106,6 +106,30 @@
       text-decoration: underline;
     }
 
+    .project-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin: 3px;
+    }
+
+    .project-status {
+      font-size: 0.85rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .project-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 12px;
+    }
+
     .timeline-item {
       border-left: 3px solid #2563eb;
       padding-left: 16px;
@@ -293,96 +317,197 @@
 
     <!-- Projects -->
     <section id="projects" class="mb-5">
-      <h2 class="section-title">Featured Projects</h2>
+  <h2 class="section-title">Featured Projects</h2>
 
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card section-card h-100">
-            <div class="card-body p-4">
-              <h3 class="project-title">Project B: Student Grade Calculator</h3>
-
-              <p class="text-secondary">
-                A course project focused on Scrum workflow, SDD, BDD, TDD,
-                Markdown reports, PDF export, GitHub branches, pull requests,
-                and Jira sprint tracking.
-              </p>
-
-              <a
-                class="project-link"
-                href="https://github.com/WaterMinh/11402_CS351_ProjectB"
-                target="_blank"
-              >
-                View Repository
-              </a>
-            </div>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="card section-card h-100">
+        <div class="card-body p-4">
+          <div class="project-card-top">
+            <h3 class="project-title">LINE OpenAI Chatbot</h3>
+            <span class="project-status">Private</span>
           </div>
-        </div>
 
-        <div class="col-md-6">
-          <div class="card section-card h-100">
-            <div class="card-body p-4">
-              <h3 class="project-title">Project 0</h3>
+          <p class="text-secondary">
+            A LINE chatbot integrated with the OpenAI API, context memory,
+            and RESTful APIs for managing chat history. This project focuses
+            on backend API design, chatbot integration, and AI-assisted user interaction.
+          </p>
 
-              <p class="text-secondary">
-                Initial course project for practicing GitHub repository setup,
-                documentation, project structure, and basic development workflow.
-              </p>
-
-              <a
-                class="project-link"
-                href="https://github.com/WaterMinh/11402_CS351_Project0"
-                target="_blank"
-              >
-                View Repository
-              </a>
-            </div>
+          <div class="mb-3">
+            <span class="project-badge">Python</span>
+            <span class="project-badge">OpenAI API</span>
+            <span class="project-badge">REST API</span>
+            <span class="project-badge">Chatbot</span>
           </div>
-        </div>
 
-        <div class="col-md-6">
-          <div class="card section-card h-100">
-            <div class="card-body p-4">
-              <h3 class="project-title">CS351 Course Repository</h3>
-
-              <p class="text-secondary">
-                Main repository for CS351 coursework, assignments, and learning
-                records related to software engineering and AI-assisted development.
-              </p>
-
-              <a
-                class="project-link"
-                href="https://github.com/WaterMinh/11402_CS351"
-                target="_blank"
-              >
-                View Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="card section-card h-100">
-            <div class="card-body p-4">
-              <h3 class="project-title">Personal GitHub Pages Website</h3>
-
-              <p class="text-secondary">
-                A personal portfolio website designed to present my background,
-                skills, projects, and course development progress professionally.
-              </p>
-
-              <a
-                class="project-link"
-                href="https://github.com/WaterMinh/WaterMinh.github.io"
-                target="_blank"
-              >
-                View Source Code
-              </a>
-            </div>
-          </div>
+          <p class="text-secondary mb-0">
+            Repository is private. Demo or code review can be provided upon request.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
 
+    <div class="col-md-6">
+      <div class="card section-card h-100">
+        <div class="card-body p-4">
+          <div class="project-card-top">
+            <h3 class="project-title">Smart File Organizer</h3>
+            <span class="project-status">Public</span>
+          </div>
+
+          <p class="text-secondary">
+            A Python-based tool for organizing files automatically. It helps classify
+            and move files based on file types or rules, improving local file management.
+          </p>
+
+          <div class="mb-3">
+            <span class="project-badge">Python</span>
+            <span class="project-badge">Automation</span>
+            <span class="project-badge">File System</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/WaterMinh/smart-file-organizer"
+            target="_blank"
+          >
+            View Repository
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card section-card h-100">
+        <div class="card-body p-4">
+          <div class="project-card-top">
+            <h3 class="project-title">IMDb Sentiment Analysis Baseline</h3>
+            <span class="project-status">Public</span>
+          </div>
+
+          <p class="text-secondary">
+            A machine learning baseline for IMDb sentiment classification using
+            BoW/TF-IDF features and Logistic Regression. The project includes
+            model training, saving models, and evaluation metrics.
+          </p>
+
+          <div class="mb-3">
+            <span class="project-badge">Python</span>
+            <span class="project-badge">Machine Learning</span>
+            <span class="project-badge">scikit-learn</span>
+            <span class="project-badge">NLP</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/WaterMinh/ds-imdb-sentiment-baseline"
+            target="_blank"
+          >
+            View Repository
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card section-card h-100">
+        <div class="card-body p-4">
+          <div class="project-card-top">
+            <h3 class="project-title">Hotel Management Database</h3>
+            <span class="project-status">Public</span>
+          </div>
+
+          <p class="text-secondary">
+            A MySQL database project for hotel management, including booking,
+            payment, cleaning, and maintenance modules. It includes schema design,
+            triggers, procedures, views, and demo scripts.
+          </p>
+
+          <div class="mb-3">
+            <span class="project-badge">MySQL</span>
+            <span class="project-badge">Database Design</span>
+            <span class="project-badge">Procedures</span>
+            <span class="project-badge">Triggers</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/WaterMinh/hotel-management-database"
+            target="_blank"
+          >
+            View Repository
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card section-card h-100">
+        <div class="card-body p-4">
+          <div class="project-card-top">
+            <h3 class="project-title">Project B: Student Grade Calculator</h3>
+            <span class="project-status">CS351</span>
+          </div>
+
+          <p class="text-secondary">
+            A CS351 course project focused on Scrum workflow, Jira backlog,
+            sprint planning, SDD, BDD, TDD, Markdown reports, PDF export,
+            GitHub branches, pull requests, and merge workflow.
+          </p>
+
+          <div class="mb-3">
+            <span class="project-badge">HTML</span>
+            <span class="project-badge">Markdown</span>
+            <span class="project-badge">Jira</span>
+            <span class="project-badge">Scrum</span>
+            <span class="project-badge">GitHub</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/WaterMinh/11402_CS351_ProjectB"
+            target="_blank"
+          >
+            View Repository
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card section-card h-100">
+        <div class="card-body p-4">
+          <div class="project-card-top">
+            <h3 class="project-title">CS351 Course Repository</h3>
+            <span class="project-status">Coursework</span>
+          </div>
+
+          <p class="text-secondary">
+            Main coursework repository for AI-assisted software development.
+            It includes course assignments, project documentation, file organization,
+            and GitHub-based development practice.
+          </p>
+
+          <div class="mb-3">
+            <span class="project-badge">Coursework</span>
+            <span class="project-badge">GitHub</span>
+            <span class="project-badge">Documentation</span>
+            <span class="project-badge">AI-assisted Development</span>
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/WaterMinh/11402_CS351"
+            target="_blank"
+          >
+            View Repository
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     <!-- Coursework -->
     <section id="coursework" class="mb-5">
       <h2 class="section-title">Coursework Progress</h2>
