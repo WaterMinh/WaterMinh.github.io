@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#06060a" />
+<title>MINH LY // blog · course reflection & field notes</title>
+<meta name="description" content="To Minh Ly — blog and field notes about CS351 course learning, AI-assisted software development, Computex Taipei, hardware, and on-device AI." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700;900&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- psychedelic engine -->
+<canvas id="gl"></canvas>
+<div class="scrim"></div>
+<div class="grain"></div>
+
+<!-- custom cursor -->
+<div class="cur" id="cur"></div>
+<div class="cur-dot" id="curDot"></div>
+
+<!-- top bar -->
+<header class="bar">
+  <a class="brand" href="index.html" data-hot>MINH<span style="color:var(--hot)">.</span>LY</a>
+  <nav id="nav">
+    <a href="index.html#summary" data-hot data-i18n="nav.home">Home</a>
+    <a href="index.html#projects" data-hot data-i18n="nav.work">Work</a>
+    <a href="index.html#education" data-hot data-i18n="nav.education">Education</a>
+    <a href="blog.html" data-hot data-i18n="nav.blog">Blog</a>
+    <a href="index.html#contact" data-hot data-i18n="nav.contact">Contact</a>
+  </nav>
+  <div class="bar-tools">
+    <button class="lang-btn" id="langBtn" data-hot aria-label="switch language">繁中</button>
+    <button class="menu-btn" id="menuBtn" data-i18n="ui.menu" aria-label="menu">Menu</button>
+  </div>
+</header>
+
+<!-- BLOG -->
+<section class="wrap blog-wrap">
+  <div class="kicker" data-i18n="blog.kicker">Blog · notes from the field</div>
+  <div class="head reveal" style="margin-top:18px">
+    <span class="no">[ ✶ ]</span>
+    <h2 data-i18n="blog.head">Field<span class="o"> notes</span></h2>
+  </div>
+
+  <article class="post post-course reveal">
+    <div class="post-meta">
+      <span data-i18n="blog.course.meta">CS351 reflection · AI-assisted software development</span>
+    </div>
+    <h2 class="post-title" data-i18n="blog.course.title">What I learned from this course</h2>
+
+    <div class="post-body">
+      <p data-i18n="blog.course.p1">This course changed how I think about building software. Before, I sometimes had a general idea and started coding too quickly. Now I understand that a good project needs a clear problem definition, organized tasks, expected behavior, tests, review, and documentation.</p>
+
+      <div class="course-callout">
+        <strong data-i18n="blog.course.callout.h">Main lesson</strong>
+        <p data-i18n="blog.course.callout.p">AI can help me move faster, but correctness still depends on human responsibility, careful testing, and clear thinking.</p>
+      </div>
+
+      <div class="post-section">
+        <h3 data-i18n="blog.course.journey.h">My learning journey</h3>
+        <div class="learning-grid">
+          <div class="learn-card">
+            <span>01</span>
+            <h4 data-i18n="blog.course.j1.h">Planning first</h4>
+            <p data-i18n="blog.course.j1.p">I learned to define the problem, list features, divide work into smaller tasks, and choose an implementation order before coding.</p>
+          </div>
+          <div class="learn-card">
+            <span>02</span>
+            <h4 data-i18n="blog.course.j2.h">Visible workflow</h4>
+            <p data-i18n="blog.course.j2.p">Jira, Git, GitHub branches, commits, and pull requests helped turn hidden progress into evidence that can be reviewed.</p>
+          </div>
+          <div class="learn-card">
+            <span>03</span>
+            <h4 data-i18n="blog.course.j3.h">Testing mindset</h4>
+            <p data-i18n="blog.course.j3.p">SDD, BDD, and TDD taught me to connect requirements, user behavior, test cases, and implementation instead of testing only at the end.</p>
+          </div>
+          <div class="learn-card">
+            <span>04</span>
+            <h4 data-i18n="blog.course.j4.h">Responsible AI</h4>
+            <p data-i18n="blog.course.j4.p">AI helped with explanations, debugging ideas, structure, and documentation, but I still had to review the logic and verify the output.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-section">
+        <h3 data-i18n="blog.course.projects.h">Projects that showed my progress</h3>
+        <div class="course-projects">
+          <a class="course-project" href="https://github.com/WaterMinh/11402_CS351_Project0" target="_blank" rel="noopener" data-hot>
+            <span data-i18n="blog.course.project0.tag">C++ · Testing · CI</span>
+            <strong data-i18n="blog.course.project0.h">Project 0 - Two Sum</strong>
+            <p data-i18n="blog.course.project0.p">I practiced algorithmic thinking with an O(n) hash-map solution, 20 organized test cases, CMake, and GitHub Actions evidence.</p>
+          </a>
+          <a class="course-project" href="https://github.com/WaterMinh/11402_CS351_ProjectB" target="_blank" rel="noopener" data-hot>
+            <span data-i18n="blog.course.projectb.tag">CSV · Query engine</span>
+            <strong data-i18n="blog.course.projectb.h">Project B - CSV Mini Database</strong>
+            <p data-i18n="blog.course.projectb.p">I built a small CSV-backed query system that loads data, stores it in memory, and supports SELECT columns with WHERE filtering.</p>
+          </a>
+          <a class="course-project" href="https://github.com/WaterMinh/11402_CS351" target="_blank" rel="noopener" data-hot>
+            <span data-i18n="blog.course.repo.tag">Course hub</span>
+            <strong data-i18n="blog.course.repo.h">Course Repository</strong>
+            <p data-i18n="blog.course.repo.p">I kept course materials, project links, assignment records, and learning evidence organized in one central repository.</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="post-section">
+        <h3 data-i18n="blog.course.improved.h">What I improved</h3>
+        <ul class="course-list">
+          <li data-i18n="blog.course.i1">I became better at planning before implementation.</li>
+          <li data-i18n="blog.course.i2">I learned to use Git and GitHub as a record of progress, not only as file storage.</li>
+          <li data-i18n="blog.course.i3">I practiced writing clearer technical documentation and project READMEs.</li>
+          <li data-i18n="blog.course.i4">I learned to test normal cases, edge cases, and invalid input instead of trusting one successful run.</li>
+          <li data-i18n="blog.course.i5">I learned to use AI as an assistant while keeping the final judgement myself.</li>
+        </ul>
+      </div>
+
+      <div class="post-section">
+        <h3 data-i18n="blog.course.future.h">How this helps my future learning</h3>
+        <p data-i18n="blog.course.future.p">In future projects, I will start with clear requirements, use Git from the beginning, create tests earlier, document decisions, and verify AI-generated work before accepting it. This course helped me understand that software development is not only about producing code. It is also about communication, evidence, testing, and responsibility.</p>
+      </div>
+    </div>
+
+    <div class="post-tags">
+      <span data-i18n="blog.course.t1">CS351</span>
+      <span data-i18n="blog.course.t2">AI-assisted development</span>
+      <span data-i18n="blog.course.t3">GitHub workflow</span>
+      <span data-i18n="blog.course.t4">Testing</span>
+    </div>
+  </article>
+
+  <article class="post reveal">
+    <div class="post-meta"><span data-i18n="blog.post1.meta">Computex Taipei · June 2026</span></div>
+    <h2 class="post-title" data-i18n="blog.post1.title">Three days at Computex</h2>
+
+    <figure class="post-hero">
+      <img src="computex_photo/web/all.jpg" alt="Computex show floor, Source Team Taiwan" loading="eager" decoding="async" />
+    </figure>
+
+    <div class="post-body">
+      <p data-i18n="blog.post1.p1">This June I spent three days at <b>Computex Taipei</b> in the Nangang
+         Exhibition Center. Walking the halls is a completely different way to read the
+         industry than scrolling release notes — you feel the sheer scale of it, hall after hall.</p>
+
+      <div class="post-section">
+        <h3 data-i18n="blog.s1.h">The show floor</h3>
+        <p data-i18n="blog.s1.p">Source Team Taiwan, open-hardware booths, a wall of country flags and crowds
+           from open to close. I went as a software engineer, mostly curious how the things
+           I deploy actually get built.</p>
+      </div>
+      <figure class="post-fig tall">
+        <img src="computex_photo/web/me.jpg" alt="Me on the show floor" loading="lazy" decoding="async" />
+        <figcaption data-i18n="blog.c.me">On the floor — ASRock Rack, Intel and Ampere behind me.</figcaption>
+      </figure>
+
+      <div class="post-section">
+        <h3 data-i18n="blog.s2.h">NVIDIA &amp; the AI gold rush</h3>
+        <p data-i18n="blog.s2.p">The NVIDIA booth glowed acid-green (my kind of palette). Half of it was the
+           Inception program — startups like Alsemy and N.LIGHT showing what they'd built
+           on top of the stack. AI wasn't a theme this year; it was the whole building.</p>
+      </div>
+      <div class="post-gallery">
+        <figure>
+          <img src="computex_photo/web/nvidia.jpg" alt="NVIDIA Inception startup wall" loading="lazy" decoding="async" />
+          <figcaption data-i18n="blog.c.nvidia">NVIDIA's Inception startup wall.</figcaption>
+        </figure>
+        <figure>
+          <img src="computex_photo/web/me2.jpg" alt="In front of the green NVIDIA wall" loading="lazy" decoding="async" />
+          <figcaption data-i18n="blog.c.me2">Couldn't resist the green wall.</figcaption>
+        </figure>
+      </div>
+
+      <div class="post-section">
+        <h3 data-i18n="blog.s3.h">Inside the machines</h3>
+        <p data-i18n="blog.s3.p">My favourite corner: ASRock Rack × NVIDIA showing the <b>RTX PRO Server</b> —
+           "the ultimate universal data-center platform for enterprise and industrial AI".
+           They left the chassis open, so you could see everything: GPU boards, the heatsink
+           farm, the cable runs and the fan walls.</p>
+        <p data-i18n="blog.s3.p2">As someone building an offline AI tool that runs models <b>locally</b>, standing
+           in front of the hardware that does the heavy version of the same job was the
+           highlight of the trip.</p>
+      </div>
+      <figure class="post-fig tall">
+        <img src="computex_photo/web/rtx_pro_server.jpg" alt="ASRock Rack x NVIDIA RTX PRO Server" loading="lazy" decoding="async" />
+        <figcaption data-i18n="blog.c.rtx">ASRock Rack × NVIDIA RTX PRO Server.</figcaption>
+      </figure>
+      <div class="post-gallery">
+        <figure>
+          <img src="computex_photo/web/rack1.jpg" alt="Open server chassis internals" loading="lazy" decoding="async" />
+          <figcaption data-i18n="blog.c.rack1">Open chassis — GPU boards, heatsinks and a lot of cabling.</figcaption>
+        </figure>
+        <figure>
+          <img src="computex_photo/web/rack2.jpg" alt="Accelerator board out of its slot" loading="lazy" decoding="async" />
+          <figcaption data-i18n="blog.c.rack2">An accelerator board out of its slot.</figcaption>
+        </figure>
+      </div>
+      <figure class="post-fig tall">
+        <img src="computex_photo/web/gygabite.jpg" alt="Gigabyte and AMD booth behind glass" loading="lazy" decoding="async" />
+        <figcaption data-i18n="blog.c.gigabyte">Gigabyte &amp; AMD hardware, behind glass.</figcaption>
+      </figure>
+
+      <div class="post-section">
+        <h3 data-i18n="blog.s4.h">InnoVEX: the startups</h3>
+        <p data-i18n="blog.s4.p">Over at the InnoVEX Center Stage I caught a few pitches. Algo Artis — a DeNA
+           spin-off — talked about "optimizing social infrastructure" with optimization
+           algorithms and "discovery-led digital transformation". A good reminder that the
+           flashy hardware only matters because of the software riding on it.</p>
+      </div>
+      <figure class="post-fig">
+        <img src="computex_photo/web/startup1.jpg" alt="Algo Artis on the InnoVEX Center Stage" loading="lazy" decoding="async" />
+        <figcaption data-i18n="blog.c.startup1">Algo Artis on the InnoVEX Center Stage.</figcaption>
+      </figure>
+      <figure class="post-fig tall">
+        <img src="computex_photo/web/startup2.jpg" alt="Discovery-Led Digital Transformation pitch" loading="lazy" decoding="async" />
+        <figcaption data-i18n="blog.c.startup2">"Discovery-Led Digital Transformation" — the pitch.</figcaption>
+      </figure>
+
+      <div class="post-section">
+        <h3 data-i18n="blog.s5.h">What I took home</h3>
+        <p data-i18n="blog.s5.p">I left with a notebook full of ideas, a phone full of photos and a renewed urge
+           to ship. Talking to the engineers at the booths — the small distance between a
+           spec sheet and the person who built it — was worth the whole trip.</p>
+      </div>
+    </div>
+
+    <div class="post-tags">
+      <span data-i18n="blog.t1">Computex</span>
+      <span data-i18n="blog.t2">Hardware</span>
+      <span data-i18n="blog.t3">On-device AI</span>
+      <span data-i18n="blog.t4">Taipei</span>
+    </div>
+  </article>
+
+  <a class="backlink" href="index.html" data-hot><span class="arr">←</span> <span data-i18n="blog.back">Back to portfolio</span></a>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
